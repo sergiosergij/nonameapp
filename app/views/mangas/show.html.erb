@@ -1,0 +1,12 @@
+<h1>Mangas#show</h1>
+
+<%= image_tag @manga.file %> 
+
+
+<ul>
+    <%if @manga.file.representable? %>
+      <%= image_tag @manga.file.representation(resize_to_limit: [500, 800]) %>
+    <% else %>
+     <%= "Manga`s file isnt represent" %>
+    <% end %>
+</ul>

@@ -4,9 +4,12 @@ Rails.application.routes.draw do
 
   get '/persons/profile', to: 'persons#profile'
   get '/my_articles', to: 'articles#my_articles'
-
-  resources :articles, :mangas
-
+  #delete '/articles/:id/delete_files', to: 'articles#delete_files', as: :delete_files_article
+  resources :articles do
+    member do 
+      delete :delete_files
+    end
+  end
   devise_for :users
 ##(No route matches [GET] "/users/sign_out") was not working, until i have added this. Why? Idk, why did devise dev do it?##
   devise_scope :user do  

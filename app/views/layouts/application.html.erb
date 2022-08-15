@@ -8,7 +8,12 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <p class="navbar-text float-right">
+    
+  </head>
+
+  <body>
+  <header class = "header">
+  <nav class="navbar-text">
         <% if user_signed_in? %>
             Logged in as <strong><%= link_to current_user.email, persons_profile_path%></strong>.
             <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
@@ -17,17 +22,9 @@
             <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
             <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
         <% end %>
-        <p> <%= if user_signed_in? then link_to "My articles", my_articles_path else flash.now[:error] = "You are not signed up" end %></p>
-    </p>
-  </head>
-  <style>
-  body{
-    background-image: url("https://i.pinimg.com/564x/44/a0/f4/44a0f4b617d3b6b73cb6188f37970b4c.jpg");
-    background-size: 100%;
-  }
-  </style>
-
-  <body>
+    </nav>
+    <%= render "layouts/nav" %>
+    </header>
     <%= yield %>
   </body>
 </html>

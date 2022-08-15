@@ -1,6 +1,17 @@
 <h1><%= @article.title %> </h1>
 <h2><%= @article.body %> </h1>
 
+<%if @article.files.attached? %>
+    <% @article.files.each do |file| %>
+    <%= image_tag file %>
+    <% end %>
+  <% else %>
+    <%= @article %>
+  <% end %>
+  
+<li><%= link_to "Delete all files", delete_files_article_path(@article), data: {
+  turbo_method: :delete,
+  turbo_confirm: "Are you sure?"}%></li>
 
 <li><%= link_to "Destroy", article_path(@article), data: {
     turbo_method: :delete,

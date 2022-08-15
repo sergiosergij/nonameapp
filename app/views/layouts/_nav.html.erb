@@ -1,0 +1,3 @@
+<nav class="navbar-text"> <%= link_to "All articles", articles_path %></nav>
+<nav class="navbar-text"><%= if user_signed_in? then link_to "My articles", my_articles_path else flash.now[:error] = "You are not signed up" end %></nav>
+<nav class="navbar-text"><%= if user_signed_in? then link_to "New article", new_article_path else flash.now[:error] = "You are not signed up" end %></nav>

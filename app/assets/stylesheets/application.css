@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+ header{
+    max-width: 1248px;
+    margin: 0 auto;
+    padding-top: 50px;
+ }
+ .header{
+    background-color: lightpink;
+ }
+
+
+ nav{
+    display: flex;
+    align-items: center;
+ }
+
+ .navbar-text {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 27px;
+ }
+
+
+
+body{
+    background-image: url("https://i.pinimg.com/564x/44/a0/f4/44a0f4b617d3b6b73cb6188f37970b4c.jpg");
+    background-size: 100%;
+  }
